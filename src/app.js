@@ -3,8 +3,10 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
-const articlesRouter = require('.//folderRoutes/folderRoutes')
-const NoteRouter = require('.//noteRoutes/noteRoutes')
+const UserRouter = require('./UserRoutes/UserRoutes')
+const itemsRouter = require('./itemsRoutes/itemsRoutes')
+const cartRouter = require('./cartRoutes/cartRoutes')
+const authRouter = require('./auth/auth-router')
 
 const app = express()
 
@@ -16,8 +18,11 @@ app.use(morgan(morganOption))
 app.use(helmet())
 app.use(cors())
 
-app.use('/folders', articlesRouter)
-app.use('/notes', NoteRouter)
+app.use('/inventory', itemsRouter)
+app.use('/cart', cartRouter)
+app.use('/api/auth', authRouter)
+app.use('/users', UserRouter)
+
 
 app.get('/', (req, res) => {
 

@@ -1,5 +1,5 @@
 require('dotenv').config()
-
+console.log(process.env.DB_URL)
 
 module.exports = {
     PORT: process.env.PORT || 8000,
