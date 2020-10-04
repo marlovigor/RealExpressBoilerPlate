@@ -10,4 +10,4 @@ VALUES
   ('marlo', 'beast'),
 
 
-COMMIT;
+COMMIT
