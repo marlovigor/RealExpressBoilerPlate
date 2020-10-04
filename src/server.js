@@ -7,7 +7,7 @@ const db = knex({
   connection: DATABASE_URL,
 })
 
-console.log(DATABASE_URL)
+console.log(DATABASE_URL,"1")
 
 app.set('db', db)
 
