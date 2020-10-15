@@ -91,10 +91,10 @@ describe('gundam delete Endpoint', function () {
 
 describe(`PATCH `, () => {
      context(`Given no gundams`, () => {
-       it(`responds with 404`, () => {
-         const articleId = 123456
+       it(`responds  404`, () => {
+         const gundamid = 123
          return supertest(app)
-           .patch(`/items/${articleId}`)
+           .patch(`/items/${gundamid}`)
            .expect(404)
        })
      })
