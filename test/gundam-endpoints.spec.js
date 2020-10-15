@@ -9,7 +9,7 @@ describe('gundam Endpoints', function () {
     before('make knex instance', () => {
         db = knex({
             client: 'pg',
-            connection: process.env.TEST_DB_URL,
+            connection: process.env.TEST_DATABASE_URL,
         })
         app.set('db', db)
     })
@@ -18,7 +18,7 @@ describe('gundam Endpoints', function () {
 
     before('clean the table', () => db('items').truncate())
 
-    context('Given there are articles in the database', () => {
+    context('Given there are items in the database', () => {
              const testUnits = [
                {
                  id: 1,
