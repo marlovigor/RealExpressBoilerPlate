@@ -27,6 +27,11 @@ cartRouter
           error: { message: `Missing '${key}' in request body` }
         })
       }
+         if (!itemid) {
+             return res.status(400).json({
+               error: { message: `Missing 'itemid' in request body` }
+             })
+           }
     }
     cartServices.insertItem(
       req.app.get('db'),
